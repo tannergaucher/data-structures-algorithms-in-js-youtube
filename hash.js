@@ -9,7 +9,7 @@ const hash = (string, max) => {
 
 const HashTable = function() {
   let storage = []
-  const storageLimit = 4
+  const storageLimit = 14
 
   this.print = function() {
     console.log(storage)
@@ -34,7 +34,7 @@ const HashTable = function() {
   }
 
   this.remove = function(key) {
-    var index = hash(key, storageLimit)
+    const index = hash(key, storageLimit)
     if (storage[index].length === 1 && storage[index][0][0] === key) {
       delete storage[index]
     } else {
@@ -46,5 +46,24 @@ const HashTable = function() {
     }
   }
 
-  this.lookup = function() {}
+  this.lookup = function(key) {
+    const index = hash(key, storageLimit)
+    if (storage[index] === undefined) {
+      return undefined
+    } else {
+      for (let i = 0; i < storage[index].length; i++) {
+        if (storage[index][i][0] === key) {
+          return storage[index][i][1]
+        }
+      }
+    }
+  }
 }
+
+const ht = new HashTable()
+
+console.log(hash('tanner', 10))
+ht.add('tanner', 'person')
+ht.add('sarah', 'cat')
+ht.print()
+console.log(ht.lookup('tanner'))

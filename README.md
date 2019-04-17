@@ -113,3 +113,78 @@ How Hash tables work:
 Key => Hash Function => Index => Information stored in the 'bucket'
 
 - In JS, hash tables are implemented in objects
+
+## Linked List
+
+- Elements are stored in a node
+- Node contains
+  - Element itself
+  - Reference to the next node
+- Have advantages and disadvantages compared to arrays
+  - _Advantages_
+    - Efficient insertions and deletions
+    - No waste of memory. No larger than necessary due to dynamic size
+  - _Disadvantages_
+    - Sequential access is slow, because elements are in in contiguous memory locations
+    - No random access. Can't say 'give me index 5'
+
+Every linked list has
+
+- Head pointing to 1st node
+- Node pointing to the next node
+- Last node pointing to null
+
+Functions
+
+- size()
+- head()
+- add()
+- remove()
+- isEmpty()
+- indexOf()
+- elementAt()
+- addAt()
+- removeAt()
+
+## Trie
+
+Special type of tree used to store associative data structures
+
+- Stores data in steps
+- Each step is a node in the trie
+- Often used to store words
+  - Finite number of letters used to make up a string
+- Use cases
+  - Validate that a word is in a dictionary
+  - Each node represents a letter in a word
+- Steps branch off
+  - When the order of the letters diverge from the other words in the trie
+  - When a word ends
+
+## Heap
+
+Partially ordered binary tree.
+
+- Similar to binary search tree, but order is different
+- Heap property indicates a relationship between parent and child nodes
+  - Max heap: all parent nodes are > or === child nodes
+  - Min heap: all child nodes are > or === child nodes
+  - Order between child nodes on same level does not matter
+- Binary heaps are complete binary trees
+  - All levels of tree are fully filled
+  - If last level is partially filled, it's filled from left to right
+  - May be implemented as tree structures
+  - More often implemented as arrays
+
+Equations when implementing with array
+
+- left child: i \* 2
+- right child: i \* 2 + 1
+- parent: i / 2
+
+Main functions
+
+- insert()
+- remove()
+
+<!-- When to use ? -->
